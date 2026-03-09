@@ -648,13 +648,13 @@
           <div className="max-w-md mx-auto min-h-screen relative z-10 pb-28">
             <Header isAdmin={isAdmin} setIsAdmin={setIsAdmin} setShowAuthModal={setShowAuthModal} handleImageUpload={handleImageUpload} profileImage={profileImage} isStoreOpen={isStoreOpen} />
             
-            {/* 🏪 ป้ายสถานะร้าน (Store Status Banner) */}
+            {/* 🏪 ป้ายสถานะร้าน (Store Status Banner) - แก้ไขสีตัวหนังสือให้อ่านง่ายขึ้นชัดเจน */}
             <div className="px-5 relative z-10 mb-3">
                 <div onClick={() => isAdmin && setShowStoreConfig(true)} className="h-[32px] rounded-xl flex items-center justify-center px-4 cursor-pointer shadow-sm border border-white relative overflow-hidden group backdrop-blur-md bg-white/70">
                     {/* จุดสถานะ */}
                     <div className={`absolute left-4 w-2 h-2 rounded-full transition-colors duration-1000 ${isStoreOpen ? 'bg-green-400 shadow-[0_0_8px_#4ade80] animate-pulse' : 'bg-[#f7afc5] shadow-[0_0_8px_#f7afc5]'}`}></div>
                     
-                    {/* 🎨 สีตัวหนังสือให้อ่านง่าย */}
+                    {/* 🎨 แก้ไขสีตัวหนังสือให้อ่านง่าย (เขียวเข้มตอนเปิด / เทาเข้มตอนปิด) */}
                     <span className={`text-[11px] font-black tracking-wider z-10 truncate px-4 transition-colors duration-1000 ${isStoreOpen ? 'text-green-700' : 'text-gray-800'}`}>
                         {isStoreOpen ? openText : closeText}
                     </span>
@@ -798,15 +798,15 @@
                            </div>
                        </div>
 
-                       {/* ✨ ปรับช่องใส่เวลาให้แคบลงและกึ่งกลางพอดีหน้าจอมือถือ */}
-                       <div className="flex gap-3 justify-center mt-2 mb-2">
-                           <div className="w-[120px]">
+                       {/* ✨ แก้ไขช่องใส่เวลาตรงนี้ ให้แบ่งพื้นที่ 50/50 อัตโนมัติ (flex-1) และปรับระยะห่างให้พอดี */}
+                       <div className="flex gap-4 mt-2 mb-2 px-1">
+                           <div className="flex-1">
                                <label className="text-[10px] font-bold text-gray-500 mb-1 block text-center">เวลาเปิด (Auto)</label>
-                               <input type="time" value={openTime} onChange={e=>setOpenTime(e.target.value)} className="w-full py-2 px-2 rounded-xl bg-white border border-gray-200 outline-none text-[12px] font-black focus:border-[#fbd3de] text-center text-gray-700 shadow-sm" />
+                               <input type="time" value={openTime} onChange={e=>setOpenTime(e.target.value)} className="w-full py-2.5 px-1 rounded-xl bg-white border border-gray-200 outline-none text-[12px] font-black focus:border-[#fbd3de] text-center text-gray-700 shadow-sm" />
                            </div>
-                           <div className="w-[120px]">
+                           <div className="flex-1">
                                <label className="text-[10px] font-bold text-gray-500 mb-1 block text-center">เวลาปิด (Auto)</label>
-                               <input type="time" value={closeTime} onChange={e=>setCloseTime(e.target.value)} className="w-full py-2 px-2 rounded-xl bg-white border border-gray-200 outline-none text-[12px] font-black focus:border-[#fbd3de] text-center text-gray-700 shadow-sm" />
+                               <input type="time" value={closeTime} onChange={e=>setCloseTime(e.target.value)} className="w-full py-2.5 px-1 rounded-xl bg-white border border-gray-200 outline-none text-[12px] font-black focus:border-[#fbd3de] text-center text-gray-700 shadow-sm" />
                            </div>
                        </div>
 
